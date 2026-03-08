@@ -6,7 +6,7 @@
 ## Installation
 
 ### Cargo
--
+
 ```bash
 cargo add adobe
 ```
