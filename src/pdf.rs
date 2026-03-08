@@ -25,9 +25,9 @@ pub const PDF_SERVICES_EW1_URL: &str = "https://pdf-services-ew1.adobe.io";
 #[derive(Clone, Debug)]
 pub struct PdfServicesClient {
     base_url: Url,
-    token: Token,
     access_token: String,
     client_id: String,
+    _token: Token,
 }
 
 impl PdfServicesClient {
@@ -47,7 +47,7 @@ impl PdfServicesClient {
             access_token: token.access_token.clone(),
             client_id: client_id.to_owned(),
             base_url,
-            token,
+            _token: token,
         })
     }
 

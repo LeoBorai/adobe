@@ -1,6 +1,7 @@
 //! https://developer.adobe.com/document-services/docs/apis/#tag/Generate-Token/operation/authentication.generatetoken
 
 use std::collections::HashMap;
+use std::fmt::Debug;
 
 use reqwest::{Client, Url};
 
@@ -8,11 +9,21 @@ use serde::{Deserialize, Serialize};
 
 use crate::{ApiHttpRequest, Error, Result};
 
-#[derive(Clone, Debug, Deserialize, Serialize)]
+#[derive(Clone, Deserialize, Serialize)]
 pub struct Token {
     pub access_token: String,
     pub token_type: String,
     pub expires_in: u32,
+}
+
+impl Debug for Token {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        f.debug_struct("Token")
+            .field("access_token", &"***REDACTED***")
+            .field("token_type", &self.token_type)
+            .field("expires_in", &self.expires_in)
+            .finish()
+    }
 }
 
 #[derive(Clone, Debug, Deserialize, Serialize)]

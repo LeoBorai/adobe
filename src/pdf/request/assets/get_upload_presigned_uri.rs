@@ -1,7 +1,8 @@
 //! https://developer.adobe.com/document-services/docs/apis/#tag/Assets/operation/asset.uploadpresignedurl
 
-use reqwest::{Client, Url, header::HeaderMap};
+use reqwest::{Client, header::HeaderMap};
 use serde::{Deserialize, Serialize};
+use url::Url;
 
 use crate::{ApiHttpRequest, Error};
 

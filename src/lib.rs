@@ -113,6 +113,7 @@ pub enum Error {
     Other(String),
 }
 
+#[allow(async_fn_in_trait)]
 pub trait ApiHttpRequest {
     type Response;
     type Params;
